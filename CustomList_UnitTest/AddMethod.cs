@@ -111,7 +111,7 @@ namespace CustomList_UnitTest
 
             //Act
             list.Add(fruit);
-            actual = list.Capavity;
+            actual = list.Capacity;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -135,7 +135,31 @@ namespace CustomList_UnitTest
             list.Add(number3);
             list.Add(number4);
             list.Add(number5);
-            actual = list.Capavity;
+            actual = list.Capacity;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void AddItemToCustomList_CheckIndexAt1AfterArrayReplaced()
+        {
+            //Arrange
+            TheCustomList<string> list = new TheCustomList<string>();
+            int number1 = 2;
+            int number2 = 6;
+            int number3 = 8;
+            int number4 = 10;
+            int number5 = 12;
+            int expected = 6;
+            int actual;
+
+            //Act
+            list.Add(number1);
+            list.Add(number2);
+            list.Add(number3);
+            list.Add(number4);
+            list.Add(number5);
+            actual = list[1];
 
             //Assert
             Assert.AreEqual(expected, actual);
