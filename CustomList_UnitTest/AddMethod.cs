@@ -141,7 +141,7 @@ namespace CustomList_UnitTest
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void AddItemToCustomList_CheckIndexAt1AfterArrayReplaced()
+        public void AddItemToCustomList_CheckSecondIndexAfterArrayReplaced_IndexShouldBeTheSame()
         {
             //Arrange
             TheCustomList<string> list = new TheCustomList<string>();
