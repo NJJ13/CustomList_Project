@@ -54,24 +54,35 @@ namespace CustomList
         }
         public void Add(T item)
         {
-            items[count] = item;
-            count++;
-                        
             if (count == capacity)
             {
+                capacity *= 2;
                 T[] copyArray = new T[capacity];
                 for (int i = 0; i <= capacity; i++)
                 {
-                    items[i] = copyArray[i];
-                }
-                capacity *= 2;
-                items = new T[capacity];
-                for (int i = 0; i <=copyArray.Length; i++)
-                {
                     copyArray[i] = items[i];
                 }
+                items = copyArray;
             }
+            items[count] = item;
+            count++;
+                        
 
+        }
+        public void Remove(T item)
+        {
+           for (int i = 0; i <= count; i++)
+           {
+                if (item.Equals(items[i]))
+                {
+                    for (int j = i; j < (count - i); j++)
+                    {
+                        items[j] = items[j + 1];
+                    }
+                    break;
+                }
+           }
+            count--;
         }
     }
 }
