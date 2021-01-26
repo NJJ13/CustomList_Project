@@ -29,8 +29,22 @@ namespace CustomList
         }
         public T this[int x]
         {
-            get => items[x];
-            set => items[x] = value;
+            get
+            {
+                if (x < 0 || x >= count)
+                {
+                    throw new IndexOutOfRangeException("Index out of range");
+                }
+                return items[x];
+            }
+            set
+            {
+                if (x < 0 || x >= count)
+                {
+                    throw new IndexOutOfRangeException("Index out of range");
+                }
+                items[x] = value;
+            }
         }
         public TheCustomList()
         {
