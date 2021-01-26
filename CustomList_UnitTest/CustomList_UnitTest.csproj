@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="AddMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoveMethod.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

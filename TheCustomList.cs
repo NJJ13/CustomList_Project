@@ -27,6 +27,11 @@ namespace CustomList
                 return capacity;
             }
         }
+        public T this[int x]
+        {
+            get => items[x];
+            set => items[x] = value;
+        }
         public TheCustomList()
         {
             count = 0;
