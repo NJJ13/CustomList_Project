@@ -120,7 +120,7 @@ namespace CustomList_UnitTest
         public void AddItemToCustomList_CheckCapacityAt5()
         {
             //Arrange
-            TheCustomList<string> list = new TheCustomList<string>();
+            TheCustomList<int> list = new TheCustomList<int>();
             int number1 = 2;
             int number2 = 6;
             int number3 = 8;
@@ -144,7 +144,7 @@ namespace CustomList_UnitTest
         public void AddItemToCustomList_CheckSecondIndexAfterArrayReplaced_IndexShouldBeTheSame()
         {
             //Arrange
-            TheCustomList<string> list = new TheCustomList<string>();
+            TheCustomList<int> list = new TheCustomList<int>();
             int number1 = 2;
             int number2 = 6;
             int number3 = 8;
