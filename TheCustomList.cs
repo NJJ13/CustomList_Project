@@ -59,8 +59,17 @@ namespace CustomList
                         
             if (count == capacity)
             {
+                T[] copyArray = new T[capacity];
+                for (int i = 0; i <= capacity; i++)
+                {
+                    items[i] = copyArray[i];
+                }
                 capacity *= 2;
                 items = new T[capacity];
+                for (int i = 0; i <=copyArray.Length; i++)
+                {
+                    copyArray[i] = items[i];
+                }
             }
 
         }
