@@ -9,16 +9,40 @@ namespace CustomList
     public class TheCustomList<T>
     {
         //creating variables could help with the add method
-        private T[] items = new T[4];
-        int Count = 0;
+        protected int count;
+        protected int capacity;        
+        protected T[] items = new T[4];
 
-
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+        }
+        public int Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+        }
         public TheCustomList()
         {
-
+            count = 0;
+            capacity = 4;
+            
         }
-        public void Add()
+        public void Add(T item)
         {
+            items[count] = item;
+            count++;
+                        
+            if (count == capacity)
+            {
+                capacity *= 2;
+                items = new T[capacity];
+            }
 
         }
     }
