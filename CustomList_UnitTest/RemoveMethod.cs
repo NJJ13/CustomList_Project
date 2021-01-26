@@ -90,6 +90,46 @@ namespace CustomList_UnitTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
-        
+        public void RemoveItemFromCustomList_CheckCountAfterRemoving1InstanceOfSameObject()
+        {
+            //Arrange
+            TheCustomList<string> list = new TheCustomList<string>();
+            string fruit1 = "Banana";
+            int expected = 3;
+            int actual;
+
+
+            //Act
+            list.Add(fruit1);
+            list.Add(fruit1);
+            list.Add(fruit1);
+            list.Add(fruit1);
+            list.Remove(fruit1);
+            actual = list.Count;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        public void RemoveItemFromCustomList_CheckindexAt1AfterRemoving1InstanceOfSameObject()
+        {
+            //Arrange
+            TheCustomList<string> list = new TheCustomList<string>();
+            string fruit1 = "Banana";
+            string fruit2 = "Apple";
+            string expected = "Orange";
+            string actual;
+
+
+            //Act
+            list.Add(fruit1);
+            list.Add(fruit2);
+            list.Add(expected);
+            list.Add(fruit2);
+            list.Remove(fruit2);
+            actual = list[1];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
