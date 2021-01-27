@@ -52,13 +52,20 @@ namespace CustomList
             capacity = 4;
             
         }
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i <= count; i++)
+            {
+                yield return items[i];
+            }
+        }
         public void Add(T item)
         {
             if (count == capacity)
             {
                 capacity *= 2;
                 T[] copyArray = new T[capacity];
-                for (int i = 0; i <= capacity; i++)
+                for (int i = 0; i <= (count - 1); i++)
                 {
                     copyArray[i] = items[i];
                 }
@@ -80,14 +87,27 @@ namespace CustomList
                     {
                         copyArray[j] = items[j+1];
                     }
-                    
+                    count--;
                     break;
                 }
                 copyArray[i] = items[i];
                 
            }
             items = copyArray;
-            count--;
+            
+            
+        }
+        public override string ToString()
+        {
+
+            string x = "";
+
+            foreach (T value in items)
+            {
+                x += value.ToString();
+
+            }
+            return x;
         }
     }
 }

@@ -30,12 +30,12 @@ namespace CustomList_UnitTest
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
         public void RemoveItemFromCustomList_Checkindex0ForNull()
         {
             //Arrange
             TheCustomList<string> list = new TheCustomList<string>();
             string fruit1 = "Banana";
-            string expected = null;
             string actual;
 
 
@@ -43,9 +43,8 @@ namespace CustomList_UnitTest
             list.Add(fruit1);
             list.Remove(fruit1);
             actual = list[0];
-
             //Assert
-            Assert.AreEqual(expected, actual);
+           
         }
         [TestMethod]
         public void RemoveItemFromCustomList_CheckindexAt1()

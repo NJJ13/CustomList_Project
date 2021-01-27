@@ -8,19 +8,17 @@ namespace CustomList_UnitTest
     public class ToStringMethod
     {
         [TestMethod]
-        public void ConvertIntToStringInCustomListAtIndex1()
+        public void ConvertIntToStringInCustomList()
         {
             //Arrange
             TheCustomList<int> list = new TheCustomList<int>();
             int firstNumber = 1;
-            int secondNumber = 2;
             string actual;
-            string expected = "2";
+            string expected = "1";
 
             //Act
             list.Add(firstNumber);
-            list.Add(secondNumber);
-            actual = list.ToString(list[1]);
+            actual = list.ToString();
             
 
             //Assert
@@ -34,12 +32,12 @@ namespace CustomList_UnitTest
             int firstNumber = 1;
             int secondNumber = 2;
             string actual;
-            string expected = "21";
+            string expected = "12";
 
             //Act
             list.Add(firstNumber);
             list.Add(secondNumber);
-            actual = list.ToString(list[1]+list[0]);
+            actual = list.ToString();
 
 
             //Assert
@@ -53,12 +51,12 @@ namespace CustomList_UnitTest
             bool x = true;
             bool y = false;
             string actual;
-            string expected = "true";
+            string expected = "truefalse";
 
             //Act
             list.Add(x);
             list.Add(y);
-            actual = list.ToString(list[0]);
+            actual = list.ToString();
 
 
             //Assert
@@ -71,7 +69,8 @@ namespace CustomList_UnitTest
             TheCustomList<char> list = new TheCustomList<char>();
             char char1 = 'c';
             char char2 = 'o';
-            char char3 = 'l';
+            char char3 = 'o';
+            char char4 = 'l';
             string actual;
             string expected = "cool";
 
@@ -79,7 +78,8 @@ namespace CustomList_UnitTest
             list.Add(char1);
             list.Add(char2);
             list.Add(char3);
-            actual = list.ToString(list[0]+ list[1] + list[1] + list[2]);
+            list.Add(char4);
+            actual = list.ToString();
 
 
             //Assert
@@ -98,7 +98,7 @@ namespace CustomList_UnitTest
             //Act
             list.Add(a);
             list.Add(b);
-            actual = list.ToString(list[0] + list[1]);
+            actual = list.ToString();
 
 
             //Assert
