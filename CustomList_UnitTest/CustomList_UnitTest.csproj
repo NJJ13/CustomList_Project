@@ -55,6 +55,7 @@
     <Compile Include="ToStringMethod.cs" />
     <Compile Include="+OverloadOperatorMethod.cs" />
     <Compile Include="-OverloadOperatorMethod.cs" />
+    <Compile Include="ZipMethod.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

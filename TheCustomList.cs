@@ -122,23 +122,21 @@ namespace CustomList
             }
             return result;
         }
-        public static TheCustomList<T> operator -(TheCustomList<T> list1, TheCustomList<T> list2)
+        public static TheCustomList<T> operator -(TheCustomList<T> x, TheCustomList<T> y)
         {
             TheCustomList<T> result = new TheCustomList<T>();
-            result = list1;
+            result = x;
             for (int i = 0; i < result.count; i++)
             {
-                for (int j = 0; j < list2.count; j++)
+                for (int j = 0; j < y.count; j++)
                 {
-                    if (result[i].Equals(list2[j]))
+                    if (result[i].Equals(y[j]))
                     {
-                        result.Remove(list2[j]);
+                        result.Remove(y[j]);
                     }
                 }
-                
             }
-            
-            return result;
+              return result;
         }
     }
 }
