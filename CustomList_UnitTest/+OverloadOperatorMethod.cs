@@ -98,22 +98,23 @@ namespace CustomList_UnitTest
         public void OverloadOperatorAddEmptyIntListToIntList()
         {
             //Arrange
-            TheCustomList<int> expected = new TheCustomList<int>();
+            TheCustomList<int> list1 = new TheCustomList<int>();
             TheCustomList<int> list2 = new TheCustomList<int>();
             
             int a = 1;
             int b = 2;
             int c = 3;
-            
-            
+            string expected = "123";
+            string actual;
 
             //Act
-            expected.Add(a);
-            expected.Add(b);
-            expected.Add(c);
+            list1.Add(a);
+            list1.Add(b);
+            list1.Add(c);
             
 
-            TheCustomList<int> actual = expected + list2;
+            TheCustomList<int> result = list1 + list2;
+            actual = result.ToString();
             //Assert
             Assert.AreEqual(expected, actual);
 
