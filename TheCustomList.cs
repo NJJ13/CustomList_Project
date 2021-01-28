@@ -52,7 +52,7 @@ namespace CustomList
             capacity = 4;
             
         }
-        public IEnumerator<T> GetEnumerator()
+        IEnumerable<T> GetEnumerator()
         {
             for (int i = 0; i <= count; i++)
             {
@@ -101,12 +101,11 @@ namespace CustomList
         {
 
             string x = "";
-
-            foreach (T value in items)
+            for (int i = 0; i < count; i++)
             {
-                x += value.ToString();
-
+                x += items[i].ToString();
             }
+            
             return x;
         }
     }

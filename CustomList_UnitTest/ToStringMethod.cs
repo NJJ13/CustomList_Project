@@ -51,7 +51,7 @@ namespace CustomList_UnitTest
             bool x = true;
             bool y = false;
             string actual;
-            string expected = "truefalse";
+            string expected = "TrueFalse";
 
             //Act
             list.Add(x);
@@ -98,6 +98,22 @@ namespace CustomList_UnitTest
             //Act
             list.Add(a);
             list.Add(b);
+            actual = list.ToString();
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void ConvertNothingtoStringInCustomList()
+        {
+            //Arrange
+            TheCustomList<string> list = new TheCustomList<string>();
+            
+            string actual;
+            string expected = "";
+
+            //Act
             actual = list.ToString();
 
 
