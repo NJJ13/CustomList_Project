@@ -108,5 +108,19 @@ namespace CustomList
             
             return x;
         }
+        public static TheCustomList<T> operator +(TheCustomList<T> list1, TheCustomList<T> list2)
+        {
+            TheCustomList<T> result = new TheCustomList<T>();
+
+            for (int i = 0; i < list1.count; i++)
+            {
+                result.Add(list1[i]);
+            }
+            for (int i = 0; i < list2.count; i++)
+            {
+                result.Add(list2[i]);
+            }
+            return result;
+        }
     }
 }
