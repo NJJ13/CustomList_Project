@@ -54,6 +54,7 @@
     <Compile Include="RemoveMethod.cs" />
     <Compile Include="ToStringMethod.cs" />
     <Compile Include="+OverloadOperatorMethod.cs" />
+    <Compile Include="-OverloadOperatorMethod.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
