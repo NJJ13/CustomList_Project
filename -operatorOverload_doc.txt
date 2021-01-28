@@ -1,0 +1,35 @@
+-operator Overload
+TheCustomList<T> operator - (TheCustomList<T> x, TheCustomList<T> y)
+
+Syntax:
+TheCustomList<T> Result = x-y
+
+Parameters:
+x TheCustomList<T>
+y TheCustomList<T>
+
+Creates a new list resulting in the removal of any occurences T object of the list y from the list x.
+
+Returns:
+TheCustomList<T> Result
+
+
+Example:
+
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
+
+	public class TheCustomList<T>
+		{
+			TheCustomList<int> x = new TheCustomList<int>(){1,2,3,4};
+			TheCustomList<int> y = new TheCustomList<int>(){1,3};
+
+			TheCustomList<int> z = x-y
+
+			//The objects, in this case integers, in list y, are removed from the list x to form new list z.
+			//The result list z has {2,4}
+
+		}
