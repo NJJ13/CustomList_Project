@@ -168,5 +168,64 @@ namespace CustomList
             capacity = copyList.capacity;
             items = copyList.items;
         }
+        public static void Swap(T[] array, int item1, int item2)
+        {
+            T holder;
+            holder = array[item1];
+            array[item1] = array[item2];
+            array[item2] = holder;
+        }
+        public void AscendSortIntList(TheCustomList<int> list)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                for (int j = i+1; j < count; j++)
+                {
+                    if (list.items[i] > list.items[j])
+                    {
+                        Swap(items, i, j);
+                    }
+                }
+            }
+        }
+        public void DescendSortIntList(TheCustomList<int> list)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                for (int j = i + 1; j < count; j++)
+                {
+                    if (list.items[i] < list.items[j])
+                    {
+                        Swap(items, i, j);
+                    }
+                }
+            }
+        }
+        public void AscendSortStringLengthList(TheCustomList<string> list)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                for (int j = i + 1; j < count; j++)
+                {
+                    if (list.items[i].Length > list.items[j].Length)
+                    {
+                        Swap(items, i, j);
+                    }
+                }
+            }
+        }
+        public void DescendSortStringLengthList(TheCustomList<string> list)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                for (int j = i + 1; j < count; j++)
+                {
+                    if (list.items[i].Length < list.items[j].Length)
+                    {
+                        Swap(items, i, j);
+                    }
+                }
+            }
+        }
     }
 }
