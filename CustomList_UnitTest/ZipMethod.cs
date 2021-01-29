@@ -95,7 +95,7 @@ namespace CustomList_UnitTest
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void ZipCustomUnevenIntLists_CheckIndex5()
+        public void ZipCustomListsFirstListLongerThanSecond_CheckIndex5()
         {
             //Arrange
             TheCustomList<int> list1 = new TheCustomList<int>();
@@ -144,6 +144,35 @@ namespace CustomList_UnitTest
 
             TheCustomList<int> result1 = list1.Zip(list2);
             actual = result1.Count;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void ZipCustomListsFirstListShorterThanSecond_CheckIndex5()
+        {
+            //Arrange
+            TheCustomList<int> list1 = new TheCustomList<int>();
+            TheCustomList<int> list2 = new TheCustomList<int>();
+
+            int a = 1;
+            int b = 3;
+            int c = 5;
+            int d = 2;
+            int e = 4;
+            int f = 6;
+            int expected = 6;
+            int actual;
+
+            //Act
+            list1.Add(a);
+            list1.Add(b);
+            list2.Add(c);
+            list2.Add(d);
+            list2.Add(e);
+            list2.Add(f);
+
+            TheCustomList<int> result1 = list1.Zip(list2);
+            actual = result1[5];
             //Assert
             Assert.AreEqual(expected, actual);
         }
