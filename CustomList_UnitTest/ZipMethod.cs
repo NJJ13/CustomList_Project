@@ -31,8 +31,8 @@ namespace CustomList_UnitTest
             list2.Add(e);
             list2.Add(f);
 
-            TheCustomList<int> result1 = list1.Zip(list2);
-            actual = result1.Count;
+            list1.Zip(list2);
+            actual = list1.Count;
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -60,8 +60,8 @@ namespace CustomList_UnitTest
             list2.Add(e);
             list2.Add(f);
 
-            TheCustomList<int> result1 = list1.Zip(list2);
-            actual = result1[1];
+            list1.Zip(list2);
+            actual = list1[1];
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -89,8 +89,8 @@ namespace CustomList_UnitTest
             list2.Add(char4);
             list2.Add(char6);
 
-            TheCustomList<int> result1 = list1.Zip(list2);
-            actual = result1.ToString();
+            list1.Zip(list2);
+            actual = list1.ToString();
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -118,8 +118,8 @@ namespace CustomList_UnitTest
             list2.Add(e);
             list2.Add(f);
 
-            TheCustomList<int> result1 = list1.Zip(list2);
-            actual = result1[5];
+            list1.Zip(list2);
+            actual = list1[5];
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -142,8 +142,8 @@ namespace CustomList_UnitTest
             list1.Add(c);
             
 
-            TheCustomList<int> result1 = list1.Zip(list2);
-            actual = result1.Count;
+            list1.Zip(list2);
+            actual = list1.Count;
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -171,8 +171,8 @@ namespace CustomList_UnitTest
             list2.Add(e);
             list2.Add(f);
 
-            TheCustomList<int> result1 = list1.Zip(list2);
-            actual = result1[5];
+            list1.Zip(list2);
+            actual = list1[5];
             //Assert
             Assert.AreEqual(expected, actual);
         }

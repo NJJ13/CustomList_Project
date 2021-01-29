@@ -52,7 +52,7 @@ namespace CustomList
             capacity = 4;
             
         }
-        IEnumerable<T> GetEnumerator()
+        public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i <= count; i++)
             {
@@ -137,6 +137,34 @@ namespace CustomList
                 }
             }
               return result;
+        }
+        public void Zip(TheCustomList<T> list)
+        {
+            TheCustomList<T> copyList = new TheCustomList<T>();
+            int x;
+            if (count > list.count)
+            {
+                x = count;
+            }
+            else
+            {
+                x = list.count;
+            }
+            
+            for (int i = 0; i < x ; i++)
+            {
+                if(i < count)
+                {
+                    copyList.Add(items[i]);
+                }
+                if(i < list.count)
+                {
+                    copyList.Add(list[i]);
+                }
+            }
+            count = copyList.count;
+            capacity = copyList.capacity;
+            items = copyList.items;
         }
     }
 }
