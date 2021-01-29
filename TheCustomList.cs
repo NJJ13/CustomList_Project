@@ -175,7 +175,7 @@ namespace CustomList
             array[item1] = array[item2];
             array[item2] = holder;
         }
-        public void AscendSortIntList(TheCustomList<int> list)
+        public void AscendSort(TheCustomList<int> list)
         {
             for (int i = 0; i < count; i++)
             {
@@ -188,7 +188,7 @@ namespace CustomList
                 }
             }
         }
-        public void DescendSortIntList(TheCustomList<int> list)
+        public void DescendSort(TheCustomList<int> list)
         {
             for (int i = 0; i < count; i++)
             {
@@ -201,7 +201,7 @@ namespace CustomList
                 }
             }
         }
-        public void AscendSortStringLengthList(TheCustomList<string> list)
+        public void AscendSort(TheCustomList<string> list)
         {
             for (int i = 0; i < count; i++)
             {
@@ -214,7 +214,7 @@ namespace CustomList
                 }
             }
         }
-        public void DescendSortStringLengthList(TheCustomList<string> list)
+        public void DescendSort(TheCustomList<string> list)
         {
             for (int i = 0; i < count; i++)
             {
