@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomList
 {
-    public class TheCustomList<T>
+    public class TheCustomList<T> : IEnumerable
     {
         //creating variables could help with the add method
         protected int count;
@@ -52,13 +53,14 @@ namespace CustomList
             capacity = 4;
             
         }
-        public IEnumerator<T> GetEnumerator()
+        public IEnumerator GetEnumerator()
         {
-            for (int i = 0; i <= count; i++)
+            foreach (T item in items)
             {
-                yield return items[i];
+                yield return item;
             }
         }
+          
         public void Add(T item)
         {
             if (count == capacity)
